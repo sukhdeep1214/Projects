@@ -7,7 +7,7 @@ void setup() {
   while (!Serial);
 
   Wire1.begin();   
-  Serial.println("HS3003 Test (Wire1)");
+  Serial.println("HS3003 Test");
 }
 
 void loop() {
@@ -36,8 +36,10 @@ void loop() {
     float humidity = (rawHumidity * 100.0) / 16383.0;
     float temperature = (rawTemperature * 165.0) / 16383.0 - 40.0;
 
-    Serial.print("Temp: "); Serial.println(temperature);
-    Serial.print("Hum: "); Serial.println(humidity);
+    Serial.print("Temp: "); 
+    Serial.println(temperature);
+    Serial.print("Hum: "); 
+    Serial.println(humidity);
   }
 
   delay(1000);
