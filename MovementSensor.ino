@@ -1,78 +1,124 @@
+#include <Arduino.h>
 #include <Wire.h>
 
-#define LSM6DSOX_ADDR 0x6A   
+#define IMU_ADDR       0x6A
 
-// Registers
-#define CTRL1_XL  0x10
-#define CTRL2_G   0x11
-#define OUTX_L_G  0x22
-#define OUTX_L_A  0x28
+#define CTRL1_XL       0x10
+#define CTRL2_G        0x11
+#define ACCEL_REG      0x28
 
-void writeRegister(uint8_t reg, uint8_t value) {
-  Wire1.beginTransmission(LSM6DSOX_ADDR);
+#define MOVE_THRESHOLD 2000
+
+int16_t oldAx = 0;
+int16_t oldAy = 0;
+int16_t oldAz = 0;
+
+
+// ============================================================
+// IMU WRITE
+// ============================================================
+
+bool imuWrite(uint8_t reg, uint8_t value)
+{
+  Wire1.beginTransmission(IMU_ADDR);
   Wire1.write(reg);
   Wire1.write(value);
-  Wire1.endTransmission();
+
+  return Wire1.endTransmission() == 0;
 }
 
-void readRegisters(uint8_t reg, uint8_t *buffer, uint8_t len) {
-  Wire1.beginTransmission(LSM6DSOX_ADDR);
+// ============================================================
+// IMU READ
+// ============================================================
+
+bool imuRead(uint8_t reg, uint8_t *buf, uint8_t len)
+{
+  Wire1.beginTransmission(IMU_ADDR);
   Wire1.write(reg);
-  Wire1.endTransmission(false);
-  Wire1.requestFrom(LSM6DSOX_ADDR, len);
 
-  for (int i = 0; i < len; i++) {
-    buffer[i] = Wire1.read();
-  }
+  if (Wire1.endTransmission(false) != 0)
+    return false;
+
+  if (Wire1.requestFrom(IMU_ADDR, len) != len)
+    return false;
+
+  for (uint8_t i = 0; i < len; i++)
+    buf[i] = Wire1.read();
+
+  return true;
 }
 
-void setup() {
+// ============================================================
+// MOVEMENT DETECTION
+// ============================================================
+
+bool movementDetected()
+{
+  uint8_t a[6];
+
+  if (!imuRead(ACCEL_REG, a, 6))
+    return false;
+
+  int16_t ax = (int16_t)((a[1] << 8) | a[0]);
+  int16_t ay = (int16_t)((a[3] << 8) | a[2]);
+  int16_t az = (int16_t)((a[5] << 8) | a[4]);
+
+  int32_t dx = ax - oldAx;
+  int32_t dy = ay - oldAy;
+  int32_t dz = az - oldAz;
+
+  oldAx = ax;
+  oldAy = ay;
+  oldAz = az;
+
+  return abs(dx) > MOVE_THRESHOLD ||
+         abs(dy) > MOVE_THRESHOLD ||
+         abs(dz) > MOVE_THRESHOLD;
+}
+
+
+// ============================================================
+// SETUP
+// ============================================================
+
+void setup()
+{
   Serial.begin(115200);
   while (!Serial);
 
-  Wire1.begin();              
-  Wire1.setClock(100000);
+  Wire1.begin();
+  Wire1.setClock(400000);
 
-  Serial.println("LSM6DSOX Test Start");
+  // Initialize accelerometer: 104 Hz, ±2g
+  if (!imuWrite(CTRL1_XL, 0x40))
+  {
+    Serial.println("IMU ACCEL INIT FAIL");
+    while (1);
+  }
 
-  // Accelerometer: 104 Hz, ±2g
-  writeRegister(CTRL1_XL, 0x40);
+  // Initialize gyroscope: 104 Hz, 250 dps
+  if (!imuWrite(CTRL2_G, 0x40))
+  {
+    Serial.println("IMU GYRO INIT FAIL");
+    while (1);
+  }
 
-  // Gyroscope: 104 Hz, 250 dps
-  writeRegister(CTRL2_G, 0x40);
-
-  delay(100);
+  Serial.println("MOVEMENT SENSOR TEST PASS");
 }
 
-void loop() {
-  uint8_t accelData[6];
-  uint8_t gyroData[6];
 
-  // Read accelerometer (6 bytes)
-  readRegisters(OUTX_L_A, accelData, 6);
+// ============================================================
+// LOOP
+// ============================================================
 
-  int16_t ax = (accelData[1] << 8) | accelData[0];
-  int16_t ay = (accelData[3] << 8) | accelData[2];
-  int16_t az = (accelData[5] << 8) | accelData[4];
+void loop()
+{
+  bool movement = movementDetected();
 
-  // Read gyroscope (6 bytes)
-  readRegisters(OUTX_L_G, gyroData, 6);
+  if (movement)
+    Serial.println("MOVEMENT: YES");
+  else
+    Serial.println("MOVEMENT: NO");
 
-  int16_t gx = (gyroData[1] << 8) | gyroData[0];
-  int16_t gy = (gyroData[3] << 8) | gyroData[2];
-  int16_t gz = (gyroData[5] << 8) | gyroData[4];
-
-  Serial.print("Accel (raw): ");
-  Serial.print(ax); Serial.print(", ");
-  Serial.print(ay); Serial.print(", ");
-  Serial.println(az);
-
-  Serial.print("Gyro (raw): ");
-  Serial.print(gx); Serial.print(", ");
-  Serial.print(gy); Serial.print(", ");
-  Serial.println(gz);
-
-  Serial.println("------------------------");
-
-  delay(500);
+  delay(100);
 }
