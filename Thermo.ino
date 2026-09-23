@@ -1,196 +1,145 @@
 #include <Wire.h>
 
+// I2C Device Addresses
 #define HS3003_ADDR  0x44
 #define BUZZER_ADDR  0x1E
 
 // Alarm thresholds
-#define HIGH_TEMP 35.0    // °C
-#define HIGH_HUM  80.0    // %RH
+#define HIGH_TEMP       35.0   // °C
+#define HIGH_HUM        80.0   // %RH
+#define HYSTERESIS      0.5    
 
+// Timing intervals (in milliseconds)
+#define SENSOR_INTERVAL 2000   
+#define BEEP_INTERVAL    500   // How often the buzzer chirps during an alert
+
+// System state tracking
+unsigned long lastSensorRead = 0;
+unsigned long lastBuzzerBeep = 0; // Tracks the repeating alarm beep timing
+
+enum SystemStatus { NORMAL, ALERT_TEMP, ALERT_HUM };
+SystemStatus currentStatus = NORMAL;
+
+// =================================================
+// Send 4-byte variables safely over I2C
+// =================================================
+void sendUint32I2C(uint32_t value) {
+  for (int i = 0; i < 4; i++) {
+    Wire1.write((uint8_t)(value >> (i * 8)));
+  }
+}
 
 // =================================================
 // Send tone to Modulino Buzzer
 // =================================================
 void buzzerTone(uint32_t frequency, uint32_t duration) {
-
   Wire1.beginTransmission(BUZZER_ADDR);
-
-  // Frequency - 4 bytes
-  Wire1.write((uint8_t*)&frequency, 4);
-
-  // Duration - 4 bytes
-  Wire1.write((uint8_t*)&duration, 4);
-
-  byte error = Wire1.endTransmission();
-
-  if (error != 0) {
-    Serial.print("Buzzer I2C error: ");
-    Serial.println(error);
-  }
+  sendUint32I2C(frequency);
+  sendUint32I2C(duration);
+  Wire1.endTransmission();
 }
-
 
 // =================================================
 // Stop buzzer
 // =================================================
 void buzzerStop() {
-
-  uint32_t zero = 0;
-
   Wire1.beginTransmission(BUZZER_ADDR);
-
-  Wire1.write((uint8_t*)&zero, 4);
-  Wire1.write((uint8_t*)&zero, 4);
-
+  sendUint32I2C(0);
+  sendUint32I2C(0);
   Wire1.endTransmission();
 }
-
 
 // =================================================
 // Setup
 // =================================================
 void setup() {
-
   Serial.begin(115200);
-  while (!Serial);
-
+  
+  // Initialize the specific I2C bus (Wire1) for Modulino / Qwiic hardware
   Wire1.begin();
-  Wire1.setClock(100000);
 
-  Serial.println();
-  Serial.println("HS3003 + Modulino Buzzer");
-  Serial.println("--------------------------------");
-
-  // Test buzzer
-  Serial.println("Testing buzzer...");
-
-  buzzerTone(2000, 1000);
-
-  delay(1200);
-
-  buzzerStop();
-
-  Serial.println("Buzzer test complete.");
+  // Wait up to 3 seconds for Serial Monitor connection
+  unsigned long startWait = millis();
+  while (!Serial && (millis() - startWait < 3000)) {
+    // Deliberately empty loop while waiting
+  }
+  
+  Serial.println("SensorsApp Initialized Successfully.");
 }
 
-
 // =================================================
-// Main loop
+// Loop
 // =================================================
 void loop() {
+  unsigned long currentMillis = millis();
 
-  // -----------------------------------------------
-  // Check HS3003
-  // -----------------------------------------------
+  // 1. Non-blocking Sensor Read Timing
+  if (currentMillis - lastSensorRead >= SENSOR_INTERVAL) {
+    lastSensorRead = currentMillis;
+    
+    // --- Step A: Trigger HS3003 Sensor Measurement ---
+    Wire1.beginTransmission(HS3003_ADDR);
+    Wire1.endTransmission(); 
+    delay(40); 
 
-  Wire1.beginTransmission(HS3003_ADDR);
+    // --- Step B: Request 4 bytes back from HS3003 ---
+    Wire1.requestFrom(HS3003_ADDR, 4);
+    if (Wire1.available() == 4) {
+      uint8_t b1 = Wire1.read();
+      uint8_t b2 = Wire1.read();
+      uint8_t b3 = Wire1.read();
+      uint8_t b4 = Wire1.read();
 
-  if (Wire1.endTransmission() != 0) {
+      // Mask status bits and shift raw ranges
+      uint16_t rawHum  = ((b1 & 0x3F) << 8) | b2;
+      uint16_t rawTemp = (b3 << 6) | (b4 >> 2);
 
-    Serial.println("HS3003 not responding");
+      // Formulas converting raw data ranges into real metrics
+      float humidity    = (float)rawHum * 100.0 / 16383.0;
+      float temperature = ((float)rawTemp * 165.0 / 16383.0) - 40.0;
 
-    buzzerStop();
+      // --- Step C: Output Local Millisecond Time ---
+      Serial.print("[");
+      Serial.print(currentMillis);
+      Serial.print(" ms] ");
 
-    delay(1000);
-    return;
+      // --- Step D: Output Real Values ---
+      Serial.print("Temperature: ");
+      Serial.print(temperature, 2);
+      Serial.print(" °C | Humidity: ");
+      Serial.print(humidity, 2);
+      Serial.print(" %RH");
+
+      // --- Step E: Evaluate Thresholds, Set States & Print Alerts ---
+      if (temperature > HIGH_TEMP) {
+        currentStatus = ALERT_TEMP;
+        
+        Serial.println(" [ALERT - HIGH TEMP!]"); 
+      } 
+      else if (temperature < (HIGH_TEMP - HYSTERESIS)) {
+        if (currentStatus == ALERT_TEMP) {
+          currentStatus = NORMAL;
+          buzzerStop(); // Silence immediately
+          Serial.println(" [STATUS - RETURNED TO NORMAL]");
+        } else {
+          Serial.println(); // Just end the line normally if conditions are safe
+        }
+      } else {
+        Serial.println(); // End the line if in the middle of the hysteresis gap
+      }
+      
+    } else {
+      Serial.println("[ERROR] Failed to read data payload from HS3003 sensor.");
+    }
   }
 
-  delay(20);
-
-
-  // -----------------------------------------------
-  // Read HS3003
-  // -----------------------------------------------
-
-  Wire1.requestFrom(HS3003_ADDR, 4);
-
-  if (Wire1.available() != 4) {
-
-    Serial.println("HS3003 read error");
-
-    buzzerStop();
-
-    delay(1000);
-    return;
+  // 2. Non-blocking Continuous Alarm Beeping Logic
+  if (currentStatus == ALERT_TEMP) {
+    if (currentMillis - lastBuzzerBeep >= BEEP_INTERVAL) {
+      lastBuzzerBeep = currentMillis;
+      
+      // Chirp a 1000Hz tone for 150ms every 500ms
+      buzzerTone(1000, 150); 
+    }
   }
-
-
-  uint8_t b1 = Wire1.read();
-  uint8_t b2 = Wire1.read();
-  uint8_t b3 = Wire1.read();
-  uint8_t b4 = Wire1.read();
-
-
-  // -----------------------------------------------
-  // Convert sensor data
-  // -----------------------------------------------
-
-  uint16_t rawHumidity =
-    ((b1 & 0x3F) << 8) | b2;
-
-  uint16_t rawTemperature =
-    ((b3 << 8) | b4) >> 2;
-
-
-  float humidity =
-    (rawHumidity * 100.0) / 16383.0;
-
-  float temperature =
-    (rawTemperature * 165.0) / 16383.0 - 40.0;
-
-
-  // -----------------------------------------------
-  // Display readings
-  // -----------------------------------------------
-
-  Serial.print("Temperature: ");
-  Serial.print(temperature, 2);
-  Serial.print(" C    ");
-
-  Serial.print("Humidity: ");
-  Serial.print(humidity, 2);
-  Serial.println(" %");
-
-
-  // -----------------------------------------------
-  // Temperature alarm
-  // -----------------------------------------------
-
-  if (temperature >= HIGH_TEMP) {
-
-    Serial.println("*** HIGH TEMPERATURE ***");
-
-    // 2 kHz beep for 500 ms
-    buzzerTone(2000, 500);
-
-    delay(600);
-  }
-
-
-  // -----------------------------------------------
-  // Humidity alarm
-  // -----------------------------------------------
-
-  else if (humidity >= HIGH_HUM) {
-
-    Serial.println("*** HIGH HUMIDITY ***");
-
-    // 1.5 kHz beep for 500 ms
-    buzzerTone(1500, 500);
-
-    delay(600);
-  }
-
-
-  // -----------------------------------------------
-  // Normal
-  // -----------------------------------------------
-
-  else {
-
-    buzzerStop();
-  }
-
-
-  delay(400);
 }
