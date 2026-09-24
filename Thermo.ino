@@ -98,19 +98,14 @@ void loop() {
       float humidity    = (float)rawHum * 100.0 / 16383.0;
       float temperature = ((float)rawTemp * 165.0 / 16383.0) - 40.0;
 
-      // --- Step C: Output Local Millisecond Time ---
-      Serial.print("[");
-      Serial.print(currentMillis);
-      Serial.print(" ms] ");
-
-      // --- Step D: Output Real Values ---
+      // --- Step C: Output Real Values ---
       Serial.print("Temperature: ");
       Serial.print(temperature, 2);
       Serial.print(" °C | Humidity: ");
       Serial.print(humidity, 2);
       Serial.print(" %RH");
 
-      // --- Step E: Evaluate Thresholds, Set States & Print Alerts ---
+      // --- Step D: Evaluate Thresholds, Set States & Print Alerts ---
       if (temperature > HIGH_TEMP) {
         currentStatus = ALERT_TEMP;
         
