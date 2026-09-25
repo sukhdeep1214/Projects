@@ -1,0 +1,85 @@
+======== App is starting ============================
+==================================================
+HS3003 App w/ State Machine Initialized (Python)
+==================================================
+[DATA] Temp: 30.69 °C | Hum: 56.54 %RH | State: NORMAL
+[DATA] Temp: 30.69 °C | Hum: 56.52 %RH | State: NORMAL
+[DATA] Temp: 30.71 °C | Hum: 56.50 %RH | State: NORMAL
+[DATA] Temp: 30.71 °C | Hum: 56.50 %RH | State: NORMAL
+[DATA] Temp: 30.71 °C | Hum: 56.58 %RH | State: NORMAL
+[DATA] Temp: 30.73 °C | Hum: 56.63 %RH | State: NORMAL
+[DATA] Temp: 30.76 °C | Hum: 55.92 %RH | State: NORMAL
+[DATA] Temp: 30.78 °C | Hum: 56.03 %RH | State: NORMAL
+[DATA] Temp: 30.79 °C | Hum: 56.03 %RH | State: NORMAL
+[DATA] Temp: 30.87 °C | Hum: 55.67 %RH | State: NORMAL
+[DATA] Temp: 31.10 °C | Hum: 54.82 %RH | State: NORMAL
+[DATA] Temp: 32.02 °C | Hum: 54.72 %RH | State: NORMAL
+[DATA] Temp: 33.12 °C | Hum: 52.35 %RH | State: NORMAL
+[DATA] Temp: 34.11 °C | Hum: 50.40 %RH | State: NORMAL
+[DATA] Temp: 35.19 °C | Hum: 48.30 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 36.25 °C | Hum: 46.14 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 37.30 °C | Hum: 43.97 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 38.48 °C | Hum: 41.65 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 39.81 °C | Hum: 39.44 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 40.27 °C | Hum: 37.97 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 40.41 °C | Hum: 37.92 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 40.48 °C | Hum: 37.29 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 40.23 °C | Hum: 37.16 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 40.03 °C | Hum: 36.95 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 39.62 °C | Hum: 37.05 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 39.16 °C | Hum: 37.94 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 38.67 °C | Hum: 38.57 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 38.20 °C | Hum: 39.19 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 37.89 °C | Hum: 39.68 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 37.49 °C | Hum: 40.46 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 37.09 °C | Hum: 41.03 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 36.74 °C | Hum: 41.43 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 36.45 °C | Hum: 42.00 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 36.10 °C | Hum: 42.65 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 36.04 °C | Hum: 43.03 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.99 °C | Hum: 43.36 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.93 °C | Hum: 43.53 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.88 °C | Hum: 43.69 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.84 °C | Hum: 43.80 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.77 °C | Hum: 43.66 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.61 °C | Hum: 44.02 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.43 °C | Hum: 51.71 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.31 °C | Hum: 58.95 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.22 °C | Hum: 49.91 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.18 °C | Hum: 46.97 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.12 °C | Hum: 46.24 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.09 °C | Hum: 46.10 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.04 °C | Hum: 46.22 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 35.01 °C | Hum: 46.37 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.99 °C | Hum: 46.41 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.95 °C | Hum: 46.37 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.90 °C | Hum: 46.07 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.89 °C | Hum: 45.96 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.85 °C | Hum: 46.02 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.82 °C | Hum: 45.96 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.77 °C | Hum: 45.83 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.75 °C | Hum: 45.91 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.70 °C | Hum: 46.16 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.69 °C | Hum: 46.11 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.63 °C | Hum: 45.98 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.62 °C | Hum: 46.02 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.58 °C | Hum: 46.20 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.54 °C | Hum: 46.32 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.52 °C | Hum: 46.35 %RH | State: ALERT (HIGH TEMP)
+[DATA] Temp: 34.50 °C | Hum: 46.54 %RH | State: NORMAL
+[DATA] Temp: 34.48 °C | Hum: 46.49 %RH | State: NORMAL
+[DATA] Temp: 34.43 °C | Hum: 46.45 %RH | State: NORMAL
+[DATA] Temp: 34.41 °C | Hum: 46.51 %RH | State: NORMAL
+[DATA] Temp: 34.39 °C | Hum: 46.58 %RH | State: NORMAL
+[DATA] Temp: 34.37 °C | Hum: 46.55 %RH | State: NORMAL
+[DATA] Temp: 34.35 °C | Hum: 46.50 %RH | State: NORMAL
+[DATA] Temp: 34.32 °C | Hum: 46.57 %RH | State: NORMAL
+[DATA] Temp: 34.27 °C | Hum: 46.81 %RH | State: NORMAL
+[DATA] Temp: 34.24 °C | Hum: 46.99 %RH | State: NORMAL
+[DATA] Temp: 34.21 °C | Hum: 47.01 %RH | State: NORMAL
+[DATA] Temp: 34.17 °C | Hum: 47.09 %RH | State: NORMAL
+[DATA] Temp: 34.15 °C | Hum: 47.02 %RH | State: NORMAL
+[DATA] Temp: 34.12 °C | Hum: 47.15 %RH | State: NORMAL
+[DATA] Temp: 34.08 °C | Hum: 47.17 %RH | State: NORMAL
+[DATA] Temp: 34.06 °C | Hum: 46.97 %RH | State: NORMAL
+[DATA] Temp: 34.03 °C | Hum: 46.99 %RH | State: NORMAL
