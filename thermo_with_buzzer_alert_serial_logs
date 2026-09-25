@@ -1,0 +1,53 @@
+14:34:18.864 -> Temperature: 30.59 °C | Humidity: 56.80 %RH
+14:34:20.898 -> Temperature: 30.57 °C | Humidity: 56.82 %RH
+14:34:22.874 -> Temperature: 30.53 °C | Humidity: 57.54 %RH
+14:34:24.868 -> Temperature: 30.49 °C | Humidity: 56.63 %RH
+14:34:26.907 -> Temperature: 30.45 °C | Humidity: 56.56 %RH
+14:34:28.870 -> Temperature: 30.39 °C | Humidity: 56.38 %RH
+14:34:30.894 -> Temperature: 30.34 °C | Humidity: 56.31 %RH
+14:34:32.899 -> Temperature: 30.33 °C | Humidity: 56.30 %RH
+14:34:34.902 -> Temperature: 30.26 °C | Humidity: 56.24 %RH
+14:34:36.891 -> Temperature: 30.29 °C | Humidity: 56.60 %RH
+14:34:38.883 -> Temperature: 30.29 °C | Humidity: 56.37 %RH
+14:34:40.913 -> Temperature: 30.31 °C | Humidity: 56.80 %RH
+14:34:42.905 -> Temperature: 30.78 °C | Humidity: 56.11 %RH
+14:34:44.917 -> Temperature: 31.82 °C | Humidity: 54.56 %RH
+14:34:46.908 -> Temperature: 32.93 °C | Humidity: 52.29 %RH
+14:34:48.907 -> Temperature: 33.86 °C | Humidity: 50.36 %RH
+14:34:50.906 -> Temperature: 34.99 °C | Humidity: 47.78 %RH
+14:34:52.932 -> Temperature: 35.92 °C | Humidity: 45.82 %RH [ALERT - HIGH TEMP!]
+14:34:54.934 -> Temperature: 36.75 °C | Humidity: 44.15 %RH [ALERT - HIGH TEMP!]
+14:34:56.967 -> Temperature: 37.67 °C | Humidity: 42.55 %RH [ALERT - HIGH TEMP!]
+14:34:58.946 -> Temperature: 37.96 °C | Humidity: 41.22 %RH [ALERT - HIGH TEMP!]
+14:35:00.908 -> Temperature: 38.12 °C | Humidity: 40.76 %RH [ALERT - HIGH TEMP!]
+14:35:02.923 -> Temperature: 38.51 °C | Humidity: 40.05 %RH [ALERT - HIGH TEMP!]
+14:35:04.927 -> Temperature: 38.90 °C | Humidity: 39.27 %RH [ALERT - HIGH TEMP!]
+14:35:06.913 -> Temperature: 39.20 °C | Humidity: 38.59 %RH [ALERT - HIGH TEMP!]
+14:35:08.913 -> Temperature: 39.53 °C | Humidity: 37.90 %RH [ALERT - HIGH TEMP!]
+14:35:10.918 -> Temperature: 39.80 °C | Humidity: 37.34 %RH [ALERT - HIGH TEMP!]
+14:35:12.930 -> Temperature: 40.02 °C | Humidity: 36.86 %RH [ALERT - HIGH TEMP!]
+14:35:14.951 -> Temperature: 39.97 °C | Humidity: 36.34 %RH [ALERT - HIGH TEMP!]
+14:35:16.962 -> Temperature: 40.12 °C | Humidity: 36.38 %RH [ALERT - HIGH TEMP!]
+14:35:18.945 -> Temperature: 39.69 °C | Humidity: 36.70 %RH [ALERT - HIGH TEMP!]
+14:35:20.945 -> Temperature: 39.05 °C | Humidity: 37.25 %RH [ALERT - HIGH TEMP!]
+14:35:22.930 -> Temperature: 38.35 °C | Humidity: 37.96 %RH [ALERT - HIGH TEMP!]
+14:35:24.944 -> Temperature: 37.98 °C | Humidity: 38.78 %RH [ALERT - HIGH TEMP!]
+14:35:26.962 -> Temperature: 37.71 °C | Humidity: 39.82 %RH [ALERT - HIGH TEMP!]
+14:35:28.973 -> Temperature: 37.37 °C | Humidity: 39.81 %RH [ALERT - HIGH TEMP!]
+14:35:30.985 -> Temperature: 36.80 °C | Humidity: 40.43 %RH [ALERT - HIGH TEMP!]
+14:35:32.965 -> Temperature: 36.30 °C | Humidity: 41.39 %RH [ALERT - HIGH TEMP!]
+14:35:34.998 -> Temperature: 35.89 °C | Humidity: 42.20 %RH [ALERT - HIGH TEMP!]
+14:35:36.975 -> Temperature: 35.51 °C | Humidity: 43.23 %RH [ALERT - HIGH TEMP!]
+14:35:38.983 -> Temperature: 35.16 °C | Humidity: 44.07 %RH [ALERT - HIGH TEMP!]
+14:35:40.986 -> Temperature: 34.81 °C | Humidity: 47.12 %RH
+14:35:42.950 -> Temperature: 34.81 °C | Humidity: 45.98 %RH
+14:35:44.960 -> Temperature: 34.75 °C | Humidity: 46.42 %RH
+14:35:46.950 -> Temperature: 34.71 °C | Humidity: 46.68 %RH
+14:35:48.954 -> Temperature: 34.69 °C | Humidity: 46.44 %RH
+14:35:50.965 -> Temperature: 34.69 °C | Humidity: 46.66 %RH
+14:35:52.997 -> Temperature: 34.66 °C | Humidity: 46.71 %RH
+14:35:54.973 -> Temperature: 34.63 °C | Humidity: 46.82 %RH
+14:35:56.997 -> Temperature: 34.59 °C | Humidity: 47.36 %RH
+14:35:59.007 -> Temperature: 34.32 °C | Humidity: 47.16 %RH [STATUS - RETURNED TO NORMAL]
+14:36:00.992 -> Temperature: 34.21 °C | Humidity: 47.05 %RH
+14:36:02.997 -> Temperature: 34.13 °C | Humidity: 47.28 %RH
