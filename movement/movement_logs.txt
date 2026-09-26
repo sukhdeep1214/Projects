@@ -1,0 +1,184 @@
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.57 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.57 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.57 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.57 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.57 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.57 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.57 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.57 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.46 m/s² | Gyro: 2.0°/s
+[NORMAL REST] | Net Accel: 9.60 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 2.3°/s
+[NORMAL REST] | Net Accel: 9.61 m/s² | Gyro: 14.3°/s
+[NORMAL REST] | Net Accel: 9.57 m/s² | Gyro: 5.0°/s
+[NORMAL REST] | Net Accel: 9.59 m/s² | Gyro: 10.8°/s
+[ACTIVE MOVEMENT] | Net Accel: 9.49 m/s² | Gyro: 32.4°/s
+[ACTIVE MOVEMENT] | Net Accel: 10.40 m/s² | Gyro: 39.7°/s
+[ACTIVE MOVEMENT] | Net Accel: 9.51 m/s² | Gyro: 25.2°/s
+[ACTIVE MOVEMENT] | Net Accel: 11.00 m/s² | Gyro: 50.5°/s
+[ACTIVE MOVEMENT] | Net Accel: 9.61 m/s² | Gyro: 24.4°/s
+[NORMAL REST] | Net Accel: 9.54 m/s² | Gyro: 9.0°/s
+[ACTIVE MOVEMENT] | Net Accel: 10.47 m/s² | Gyro: 50.0°/s
+[NORMAL REST] | Net Accel: 9.68 m/s² | Gyro: 12.3°/s
+[NORMAL REST] | Net Accel: 9.54 m/s² | Gyro: 3.4°/s
+[NORMAL REST] | Net Accel: 9.48 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.54 m/s² | Gyro: 4.5°/s
+[NORMAL REST] | Net Accel: 9.56 m/s² | Gyro: 9.7°/s
+[NORMAL REST] | Net Accel: 9.51 m/s² | Gyro: 11.5°/s
+[ACTIVE MOVEMENT] | Net Accel: 9.34 m/s² | Gyro: 54.5°/s
+[NORMAL REST] | Net Accel: 9.18 m/s² | Gyro: 8.8°/s
+[NORMAL REST] | Net Accel: 9.41 m/s² | Gyro: 3.9°/s
+[NORMAL REST] | Net Accel: 9.73 m/s² | Gyro: 12.0°/s
+[NORMAL REST] | Net Accel: 9.56 m/s² | Gyro: 2.6°/s
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 7.2°/s
+[NORMAL REST] | Net Accel: 9.60 m/s² | Gyro: 7.3°/s
+[NORMAL REST] | Net Accel: 9.55 m/s² | Gyro: 2.1°/s
+[ACTIVE MOVEMENT] | Net Accel: 9.82 m/s² | Gyro: 34.2°/s
+[ACTIVE MOVEMENT] | Net Accel: 10.37 m/s² | Gyro: 32.9°/s
+[NORMAL REST] | Net Accel: 9.62 m/s² | Gyro: 0.7°/s
+[NORMAL REST] | Net Accel: 9.76 m/s² | Gyro: 3.4°/s
+[ACTIVE MOVEMENT] | Net Accel: 9.32 m/s² | Gyro: 31.4°/s
+[NORMAL REST] | Net Accel: 9.55 m/s² | Gyro: 9.0°/s
+[NORMAL REST] | Net Accel: 9.40 m/s² | Gyro: 13.2°/s
+[NORMAL REST] | Net Accel: 9.68 m/s² | Gyro: 10.7°/s
+[NORMAL REST] | Net Accel: 9.61 m/s² | Gyro: 0.6°/s
+[NORMAL REST] | Net Accel: 9.57 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.57 m/s² | Gyro: 7.3°/s
+[ACTIVE MOVEMENT] | Net Accel: 9.69 m/s² | Gyro: 41.2°/s
+[ACTIVE MOVEMENT] | Net Accel: 9.59 m/s² | Gyro: 37.7°/s
+[ACTIVE MOVEMENT] | Net Accel: 9.95 m/s² | Gyro: 172.3°/s
+[ACTIVE MOVEMENT] | Net Accel: 9.57 m/s² | Gyro: 248.7°/s
+[WARNING (TILTED)] | Net Accel: 10.48 m/s² | Gyro: 596.5°/s
+[WARNING (TILTED)] | Net Accel: 11.64 m/s² | Gyro: 278.6°/s
+[WARNING (TILTED)] | Net Accel: 10.84 m/s² | Gyro: 140.4°/s
+[WARNING (TILTED)] | Net Accel: 8.23 m/s² | Gyro: 273.7°/s
+[WARNING (TILTED)] | Net Accel: 6.08 m/s² | Gyro: 460.9°/s
+[WARNING (TILTED)] | Net Accel: 7.66 m/s² | Gyro: 472.2°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 64.73 m/s² | Gyro: 167.1°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 8.59 m/s² | Gyro: 403.3°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 14.67 m/s² | Gyro: 165.6°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 9.96 m/s² | Gyro: 62.5°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 10.10 m/s² | Gyro: 19.2°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 9.96 m/s² | Gyro: 5.2°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 9.98 m/s² | Gyro: 1.8°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 9.97 m/s² | Gyro: 2.3°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 10.01 m/s² | Gyro: 2.3°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 9.98 m/s² | Gyro: 1.5°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 9.97 m/s² | Gyro: 1.6°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 9.98 m/s² | Gyro: 1.5°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 9.97 m/s² | Gyro: 1.9°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 9.97 m/s² | Gyro: 1.7°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 9.97 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.3°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 4.2°/s
+[NORMAL REST] | Net Accel: 10.00 m/s² | Gyro: 3.9°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 3.1°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.8°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.1°/s
+[NORMAL REST] | Net Accel: 9.99 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.6°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.99 m/s² | Gyro: 1.3°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.99 m/s² | Gyro: 2.2°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.99 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.6°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 10.00 m/s² | Gyro: 2.6°/s
+[NORMAL REST] | Net Accel: 9.99 m/s² | Gyro: 1.2°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 2.5°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 2.0°/s
+[ACTIVE MOVEMENT] | Net Accel: 10.52 m/s² | Gyro: 15.2°/s
+[NORMAL REST] | Net Accel: 9.96 m/s² | Gyro: 3.5°/s
+[NORMAL REST] | Net Accel: 9.58 m/s² | Gyro: 11.4°/s
+[ACTIVE MOVEMENT] | Net Accel: 11.24 m/s² | Gyro: 304.5°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 22.75 m/s² | Gyro: 1457.4°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 9.70 m/s² | Gyro: 252.6°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 7.22 m/s² | Gyro: 218.8°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 8.59 m/s² | Gyro: 224.1°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 9.17 m/s² | Gyro: 1295.4°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 11.74 m/s² | Gyro: 581.5°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 19.68 m/s² | Gyro: 730.7°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 7.40 m/s² | Gyro: 256.3°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 14.14 m/s² | Gyro: 711.6°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 8.89 m/s² | Gyro: 302.9°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 16.25 m/s² | Gyro: 461.1°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 10.36 m/s² | Gyro: 424.5°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 16.08 m/s² | Gyro: 847.0°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 5.03 m/s² | Gyro: 691.9°/s
+[ALERT (SUDDEN IMPACT)] | Net Accel: 7.56 m/s² | Gyro: 550.5°/s
+[NORMAL REST] | Net Accel: 13.99 m/s² | Gyro: 952.3°/s
+[ACTIVE MOVEMENT] | Net Accel: 5.44 m/s² | Gyro: 551.3°/s
+[ACTIVE MOVEMENT] | Net Accel: 8.76 m/s² | Gyro: 207.4°/s
+[ACTIVE MOVEMENT] | Net Accel: 9.43 m/s² | Gyro: 20.6°/s
+[NORMAL REST] | Net Accel: 9.92 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.9°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.9°/s
+[NORMAL REST] | Net Accel: 9.96 m/s² | Gyro: 1.6°/s
+[NORMAL REST] | Net Accel: 9.96 m/s² | Gyro: 1.8°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.7°/s
+[NORMAL REST] | Net Accel: 9.96 m/s² | Gyro: 1.6°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.6°/s
+[NORMAL REST] | Net Accel: 9.95 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.99 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.99 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.3°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.3°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.99 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.5°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.99 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.96 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.97 m/s² | Gyro: 1.4°/s
+[NORMAL REST] | Net Accel: 9.98 m/s² | Gyro: 1.4°/s
