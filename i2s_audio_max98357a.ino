@@ -1,81 +1,57 @@
-#include "FS.h"
+// ESP32: stream /test.wav from an SD card to a MAX98357A using the Arduino ESP_I2S library.
+// Requires ESP32 Arduino core 3.x. Assumes a canonical 44-byte WAV header (16-bit PCM).
+
 #include "SD.h"
-#include "SPI.h"
-#include "driver/i2s_std.h"
+#include "ESP_I2S.h"
 
-#define SD_CS          5
-#define I2S_BCLK      27
-#define I2S_LRC       26
-#define I2S_DOUT      25
+#define SD_CS           5
+#define I2S_BCLK        27
+#define I2S_LRC         26
+#define I2S_DOUT        25
 
+#define WAV_FILE        "/test.wav"
+#define WAV_HEADER_SIZE 44
+#define BUFFER_SIZE     512
+
+I2SClass i2s;
 File audioFile;
-i2s_chan_handle_t tx_chan = NULL;
-#define BUFFER_SIZE 512
 uint8_t audioBuffer[BUFFER_SIZE];
 
-void initHardwareI2S() {
-    // Clean up if channel already exists (for clean re-looping)
-    if (tx_chan != NULL) {
-        i2s_channel_disable(tx_chan);
-        i2s_del_channel(tx_chan);
-    }
-
-    i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_AUTO, I2S_ROLE_MASTER);
-    i2s_new_channel(&chan_cfg, &tx_chan, NULL);
-
-    i2s_std_config_t std_cfg = {
-        .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(24000),
-        .slot_cfg = I2S_STD_MSB_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_MONO),
-        .gpio_cfg = {
-            .mclk = I2S_GPIO_UNUSED,
-            .bclk = (gpio_num_t)I2S_BCLK,
-            .ws   = (gpio_num_t)I2S_LRC,
-            .dout = (gpio_num_t)I2S_DOUT,
-            .din  = I2S_GPIO_UNUSED,
-            .invert_flags = { .mclk_inv = false, .bclk_inv = false, .ws_inv = false }
-        }
-    };
-
-    i2s_channel_init_std_mode(tx_chan, &std_cfg);
-    i2s_channel_enable(tx_chan);
+static void halt(const char *msg) {
+  Serial.println(msg);
+  while (true) delay(1000);
 }
 
 void setup() {
-    Serial.begin(115200);
-    
-    if(!SD.begin(SD_CS)){
-        Serial.println("SD Card Mount Failed!");
-        while(true);
-    }
-    Serial.println("SD Card Mounted successfully!");
+  Serial.begin(115200);
 
-    initHardwareI2S();
+  if (!SD.begin(SD_CS)) halt("SD card mount failed");
 
-    audioFile = SD.open("/test.wav", FILE_READ);
-    if(!audioFile){
-        Serial.println("Failed to find test.wav!");
-        while(true);
-    }
-    
-    audioFile.seek(44); 
-    Serial.println("Streaming crystal clear audio...");
+  audioFile = SD.open(WAV_FILE, FILE_READ);
+  if (!audioFile) halt("Failed to open " WAV_FILE);
+
+  // Read channel count and sample rate from the WAV header
+  uint8_t header[WAV_HEADER_SIZE];
+  if (audioFile.read(header, WAV_HEADER_SIZE) != WAV_HEADER_SIZE) halt("WAV header too short");
+  uint16_t channels = header[22] | (header[23] << 8);
+  uint32_t rate = header[24] | (header[25] << 8) | (header[26] << 16) | ((uint32_t)header[27] << 24);
+
+  i2s.setPins(I2S_BCLK, I2S_LRC, I2S_DOUT);
+  i2s_slot_mode_t slots = (channels == 2) ? I2S_SLOT_MODE_STEREO : I2S_SLOT_MODE_MONO;
+  if (!i2s.begin(I2S_MODE_STD, rate, I2S_DATA_BIT_WIDTH_16BIT, slots, I2S_STD_SLOT_BOTH))
+    halt("I2S init failed");
+
+  Serial.printf("Streaming %s: %u Hz, %u channel(s)\n", WAV_FILE, (unsigned)rate, channels);
 }
 
 void loop() {
-    
-    if (audioFile.available() > 0) { 
-        int bytesToRead = audioFile.available();
-        if (bytesToRead > BUFFER_SIZE) {
-            bytesToRead = BUFFER_SIZE;
-        }
+  size_t n = audioFile.read(audioBuffer, BUFFER_SIZE);
+  if (n > 0) {
+    i2s.write(audioBuffer, n);        // blocks until DMA has room, which paces the loop
+    return;
+  }
 
-        int bytesRead = audioFile.read(audioBuffer, bytesToRead);
-        size_t bytesWritten = 0;
-        
-        i2s_channel_write(tx_chan, audioBuffer, bytesRead, &bytesWritten, portMAX_DELAY);
-    } else {
-        Serial.println("Track ended. Re-centering audio track...");
-        audioFile.seek(44); // Force reset pointer back to audio start
-        delay(1000); 
-    }
+  Serial.println("Track ended, restarting");
+  audioFile.seek(WAV_HEADER_SIZE);    // back to the start of the audio data
+  delay(1000);
 }
